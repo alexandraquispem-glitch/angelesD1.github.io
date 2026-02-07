@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+
+.seccion-intercalada {
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+}
+
+/* Las secciones IMPARES (1, 3, 5...) serán Moradas */
+.seccion-intercalada:nth-of-type(odd) {
+    background-color: var(--purple-dark);
+    color: var(--white);
+}
+
+.seccion-intercalada:nth-of-type(odd) .titulo-estilo {
+    color: var(--white);
+}
+
+/* Las secciones PARES (2, 4, 6...) serán Blancas */
+.seccion-intercalada:nth-of-type(even) {
+    background-color: var(--white);
+    color: var(--purple-dark);
+}
+
+/* Estilo del Título (como en la imagen "¿Quiénes somos?") */
+.titulo-estilo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* La línea cian debajo del título */
+.titulo-estilo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 4px;
+    background-color: var(--cyan-accent);
+}
+
+/* Diseño Flex para poner Imagen al lado del Texto */
+.contenido-flex {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.texto-info { flex: 1; }
+.imagen-info { flex: 1; }
+
+.imagen-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-autocuidado {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+
+/* Responsive para Celular */
+@media (max-width: 768px) {
+    .contenido-flex {
+        flex-direction: column; /* En celular, la imagen va arriba o abajo del texto */
+    }
+    
+    .seccion-intercalada {
+        padding: 50px 5%;
+    }
+}
+
+/* Variables de color de D1 */
+:root {
+    --purple-dark: #3b0a4d;
+    --purple-light: #5d1d77;
+    --cyan-accent: #00bcd4;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img { height: 40px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--purple-dark);
+    padding: 0 15px;
+    font-weight: 500;
+}
+
+/* Hero Section - Imagen de fondo con filtro */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(59, 10, 77, 0.6), rgba(59, 10, 77, 0.6)), 
+                url('chikawa.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.hero h1 { font-size: 3rem; font-weight: 300; }
+.hero .destacado { font-size: 5rem; font-weight: bold; }
+
+/* Responsive: Celulares */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Se oculta para usar menú hamburguesa con JS */
+    }
+
+    .hero h1 { font-size: 2rem; }
+    .hero .destacado { font-size: 3.5rem; }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* Footer y Botón Notion */
+footer {
+    background: var(--purple-dark);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.btn-notion:hover { background: #008ba3; }
+
+/* letras */
+
+h3 {
+    color: #5d1d77;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+section {
+    scroll-margin-top: 80px; 
+}
+
+/* foother */
+
+.main-footer {
+    background-color: var(--purple-dark); /* Púrpura D1 profundo */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 4px solid var(--cyan-accent); /* Línea decorativa superior */
+}
+
+.footer-tagline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+/* Botón  */
+.btn-notion {
+    display: inline-block;
+    background-color: var(--cyan-accent); /* Cian brillante */
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px; /* Bordes ligeramente suaves */
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+    margin-bottom: 40px;
+}
+
+.btn-notion:hover {
+    background-color: #009eb3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
+}
+
+
+.mini-logo {
+    height: 30px;
+
+}
+
+.divider {
+    width: 40px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 20px;
+}
+
+/* Origen correcto para escalar */
+#heart,
+#heart-shadow {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: heartbeat 2.2s ease-in-out infinite;
+}
+
+/* Manos sosteniendo */
+#hand-left,
+#hand-left-detail,
+#hand-right,
+#hand-right-detail {
+    transform-box: fill-box;
+    animation: hands 2.2s ease-in-out infinite;
+}
+
+/* Latido del corazón */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.06);
+    }
+    40% {
+        transform: scale(0.98);
+    }
+}
+
+/* Movimiento suave de manos */
+@keyframes hands {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    40% {
+        transform: translateY(1px);
+    }
+}
+
+#shield-border,
+#shield-inner {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: shieldPulse 3s ease-in-out infinite;
+}
+
+@keyframes shieldPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+
+#steps {
+    animation: rise 3s ease-in-out infinite;
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+#star {
+    animation: glow 2.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#arrow-left,
+#arrow-right {
+    animation: arrows 2s ease-in-out infinite;
+}
+
+@keyframes rise {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes glow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes arrows {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+/* SVG responsivos (Autodefensa y Superación) */
+.svg-proteccion,
+.svg-superacion {
+    width: 100%;
+    max-width: 400px;   /* Ajusta si quieres más grandes */
+    height: auto;
+}
