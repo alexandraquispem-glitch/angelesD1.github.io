@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
-
+ 
 .seccion-intercalada {
     padding: 80px 10%;
     display: flex;
@@ -326,3 +326,4 @@ section {
     max-width: 400px;   /* Ajusta si quieres más grandes */
     height: auto;
 }
+
