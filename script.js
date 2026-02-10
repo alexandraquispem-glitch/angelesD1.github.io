@@ -6,3 +6,4 @@ function toggleChat() {
         chatWindow.style.display = 'none';
     }
 }
+ 
